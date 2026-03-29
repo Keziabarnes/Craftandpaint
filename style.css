@@ -5,7 +5,7 @@
    ============================================================ */
 
 
-/* ---- IA2 CSS: Custom Properties (variables) ---- */
+/* -- Custom Properties (variables) -- */
 :root {
   --clr-primary:   #7B2D8B;
   --clr-secondary: #F4A300;
@@ -35,7 +35,7 @@
 }
 
 
-/* ---- IA2 CSS: Element selectors — global reset & base ---- */
+/* -- Global reset & base styles -- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; font-size: 16px; }
@@ -56,7 +56,7 @@ ul  { list-style: none; }
 p   { margin-bottom: .75rem; }
 
 
-/* ---- IA2 CSS: Element selectors — typography ---- */
+/* -- Typography -- */
 h1, h2, h3, h4 {
   font-family: var(--ff-display);
   font-weight: var(--fw-bold);
@@ -71,7 +71,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.6rem); }
 h4 { font-size: 1rem; }
 
 
-/* ---- IA2 CSS: Class selector — layout container ---- */
+/* -- Layout container -- */
 .container {
   width: 92%;
   max-width: 1100px;
@@ -81,9 +81,7 @@ h4 { font-size: 1rem; }
 .text-center { text-align: center; }
 
 
-/* ============================================================
-   BUTTONS — IA2 CSS: Class selectors + pseudo-class :hover
-   ============================================================ */
+/* -- Buttons -- */
 .btn {
   display: inline-block;
   padding: .65rem 1.6rem;
@@ -110,9 +108,7 @@ h4 { font-size: 1rem; }
 .btn-outline:hover { background: var(--clr-primary); color: var(--clr-white); }
 
 
-/* ============================================================
-   HEADER / BANNER — IA2 CSS: Layout & Positioning
-   ============================================================ */
+/* -- Header / Banner -- */
 .site-banner {
   background: var(--clr-primary);
   padding: 2rem 1rem;
@@ -158,9 +154,7 @@ h4 { font-size: 1rem; }
 }
 
 
-/* ============================================================
-   NAVIGATION — IA2 CSS: Flexbox layout, pseudo-class :hover
-   ============================================================ */
+/* -- Navigation -- */
 .site-nav {
   background: var(--clr-white);
   border-bottom: 3px solid var(--clr-primary);
@@ -170,7 +164,6 @@ h4 { font-size: 1rem; }
   box-shadow: 0 2px 10px rgba(0,0,0,.08);
 }
 
-/* IA2 CSS: Descendant selector — nav links inside .site-nav */
 .site-nav ul {
   display: flex;
   justify-content: center;
@@ -189,7 +182,6 @@ h4 { font-size: 1rem; }
   transition: var(--transition);
 }
 
-/* IA2 CSS: Pseudo-class :hover */
 .site-nav ul li a:hover,
 .site-nav ul li a.active {
   color: var(--clr-primary);
@@ -197,7 +189,7 @@ h4 { font-size: 1rem; }
   background: var(--clr-light);
 }
 
-/* Cart badge — IA2 CSS: ID selector */
+/* Cart badge */
 #cart-count {
   display: inline-flex;
   align-items: center;
@@ -235,9 +227,7 @@ h4 { font-size: 1rem; }
 }
 
 
-/* ============================================================
-   MAIN CONTENT WRAPPER
-   ============================================================ */
+/* -- Main content wrapper -- */
 .page-content {
   background: var(--clr-white);
   border: 1px solid var(--clr-light);
@@ -250,7 +240,7 @@ h4 { font-size: 1rem; }
   flex: 1;
 }
 
-/* IA2 CSS: Class selector — hero banner inside pages */
+/* Hero banner inside pages */
 .page-hero {
   border-radius: var(--radius);
   background: linear-gradient(135deg, var(--clr-primary), var(--clr-mid));
@@ -264,9 +254,7 @@ h4 { font-size: 1rem; }
 .page-hero p  { color: rgba(255,255,255,.85); max-width: 600px; margin: 0 auto; }
 
 
-/* ============================================================
-   HOME PAGE — IA2 CSS: Grid layout
-   ============================================================ */
+/* -- Home page -- */
 .home-welcome {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -277,7 +265,7 @@ h4 { font-size: 1rem; }
 
 .home-welcome-img {
 width: 80%;
-  heigh: 80%;
+  height: 80%;
   object-fit: contain;
   border-radius: 0;
 }
@@ -287,7 +275,7 @@ width: 80%;
 .bullet-list { list-style: disc; padding-left: 1.5rem; color: var(--clr-muted); margin-bottom: 1.5rem; }
 .bullet-list li { margin-bottom: .4rem; }
 
-/* IA2 CSS: Grid layout — products grid */
+/* Products grid */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -295,7 +283,6 @@ width: 80%;
   margin-top: 1.5rem;
 }
 
-/* IA2 CSS: Class selector + pseudo-class :hover */
 .product-card {
   background: var(--clr-bg);
   border-radius: var(--radius);
@@ -358,9 +345,7 @@ width: 80%;
 .add-to-cart-btn:hover { background: var(--clr-accent); transform: scale(1.05); }
 
 
-/* ============================================================
-   FORMS (Login & Register) — IA2 CSS: Descendant + pseudo-class
-   ============================================================ */
+/* -- Forms (Login & Register) -- */
 .form-wrap { max-width: 520px; margin: 0 auto; }
 
 .form-card-inner {
@@ -373,7 +358,6 @@ width: 80%;
 
 .form-group { margin-bottom: 1.1rem; }
 
-/* IA2 CSS: Descendant selector */
 .form-group label {
   display: block;
   font-weight: var(--fw-bold);
@@ -397,7 +381,6 @@ width: 80%;
   outline: none;
 }
 
-/* IA2 CSS: Pseudo-class :focus */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -437,7 +420,6 @@ width: 80%;
   color: var(--clr-muted);
 }
 
-/* IA2 CSS: Descendant selector — links inside .form-footer */
 .form-footer a { color: var(--clr-primary); font-weight: var(--fw-bold); }
 
 .password-strength {
@@ -455,7 +437,7 @@ width: 80%;
   width: 0;
 }
 
-/* IA2 CSS: Class selectors — feedback messages */
+/* Feedback messages */
 .error-msg {
   color: var(--clr-error);
   font-size: .78rem;
@@ -479,9 +461,7 @@ width: 80%;
 .success-msg.visible { display: block; }
 
 
-/* ============================================================
-   CART PAGE — IA2 CSS: Grid + Flexbox layout
-   ============================================================ */
+/* -- Cart page -- */
 .cart-layout {
   display: grid;
   grid-template-columns: 1fr 300px;
@@ -498,13 +478,11 @@ width: 80%;
 
 .cart-table { width: 100%; border-collapse: collapse; }
 
-/* IA2 CSS: Descendant selector — thead inside .cart-table */
 .cart-table thead { background: var(--clr-primary); color: var(--clr-white); }
 .cart-table th { padding: .75rem 1rem; text-align: left; font-size: .82rem; }
 .cart-table td { padding: .75rem 1rem; border-bottom: 1px solid var(--clr-light); vertical-align: middle; }
 .cart-table tbody tr:last-child td { border-bottom: none; }
 
-/* IA2 CSS: Pseudo-class :hover on table rows */
 .cart-table tbody tr:hover { background: var(--clr-light); }
 
 .qty-control { display: flex; align-items: center; gap: .4rem; }
@@ -547,7 +525,7 @@ width: 80%;
   flex-wrap: wrap;
 }
 
-/* IA2 CSS: Class selector — order summary sidebar */
+/* Order summary sidebar */
 .cart-summary {
   background: var(--clr-bg);
   border-radius: var(--radius);
@@ -590,9 +568,7 @@ width: 80%;
 .empty-state .empty-icon { font-size: 3.5rem; margin-bottom: .875rem; opacity: .4; }
 
 
-/* ============================================================
-   CHECKOUT PAGE — IA2 CSS: Grid layout
-   ============================================================ */
+/* -- Checkout page -- */
 .checkout-layout {
   display: grid;
   grid-template-columns: 1fr 300px;
@@ -636,9 +612,7 @@ width: 80%;
 .bank-details p { margin-bottom: .3rem; }
 
 
-/* ============================================================
-   ABOUT PAGE — IA2 CSS: Grid layout
-   ============================================================ */
+/* -- About page -- */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -693,7 +667,6 @@ width: 80%;
   margin-top: 1rem;
 }
 
-/* IA2 CSS: Descendant selector — paragraphs inside .student-details */
 .student-details p { font-size: .875rem; margin-bottom: .35rem; }
 .student-details p strong { color: var(--clr-primary); }
 
@@ -702,9 +675,7 @@ width: 80%;
 .storyboard-section img { border-radius: var(--radius); border: 1px solid var(--clr-light); max-width: 100%; }
 
 
-/* ============================================================
-   MODAL — IA2 CSS: Positioning (fixed)
-   ============================================================ */
+/* -- Modal -- */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -738,9 +709,7 @@ width: 80%;
 .modal-actions { display: flex; gap: .875rem; justify-content: center; }
 
 
-/* ============================================================
-   TOAST NOTIFICATION — IA2 CSS: Fixed positioning
-   ============================================================ */
+/* -- Toast notification -- */
 .toast {
   position: fixed;
   bottom: 1.5rem;
@@ -762,9 +731,7 @@ width: 80%;
 .toast.show { transform: translateY(0); opacity: 1; }
 
 
-/* ============================================================
-   FOOTER — IA2 CSS: Descendant selectors
-   ============================================================ */
+/* -- Footer -- */
 footer {
   background: var(--clr-dark);
   color: rgba(255,255,255,.7);
@@ -791,7 +758,6 @@ footer {
   letter-spacing: 1px;
 }
 
-/* IA2 CSS: Descendant selector — links inside footer */
 .footer-col ul li { margin-bottom: .4rem; }
 .footer-col ul li a { font-size: .85rem; }
 .footer-col ul li a:hover { color: var(--clr-secondary); }
@@ -808,9 +774,7 @@ footer {
 }
 
 
-/* ============================================================
-   SCROLL-TO-TOP BUTTON
-   ============================================================ */
+/* -- Scroll-to-top button -- */
 #scroll-top-btn {
   position: fixed;
   bottom: 5rem;
@@ -831,12 +795,12 @@ footer {
 
 #scroll-top-btn:hover { background: var(--clr-mid); }
 
-/* ---- Utility classes ---- */
+
+/* -- Utility classes -- */
 .btn-full { width: 100%; font-size: 1rem; padding: .875rem; }
 
 .optional { color: var(--clr-muted); font-weight: var(--fw-normal); font-size: .85rem; }
 
-/* IA2 CSS: Descendant selector — checkbox label */
 .checkbox-label {
   display: flex;
   align-items: flex-start;
@@ -859,7 +823,6 @@ footer {
   border: 0;
 }
 
-/* About page — slogan */
 .slogan {
   font-family: var(--ff-accent);
   font-size: 1.4rem;
@@ -867,7 +830,6 @@ footer {
   margin: 1.5rem 0;
 }
 
-/* Checkout card nested inside form */
 .checkout-card .checkout-card {
   margin-top: 1.5rem;
   border-top: 2px solid var(--clr-light);
@@ -878,16 +840,12 @@ footer {
   padding-right: 0;
 }
 
-/* Modal emoji display */
 .modal-emoji { font-size: 2.5rem; margin-bottom: .75rem; }
 
-/* Horizontal rule */
 hr { border: none; border-top: 2px solid var(--clr-light); margin: 2rem 0; }
 
 
-/* ============================================================
-   RESPONSIVE — IA2 CSS: Media queries (mobile & desktop views)
-   ============================================================ */
+/* -- Responsive (media queries) -- */
 
 /* Tablet: max 950px */
 @media (max-width: 950px) {
