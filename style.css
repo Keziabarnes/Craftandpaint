@@ -338,6 +338,15 @@ width: 80%;
 
 .add-to-cart-btn:hover { background: var(--clr-accent); transform: scale(1.05); }
 
+/* iframe */
+
+iframe{
+	padding: 15px;
+	display: block;
+	width:95%;
+	height: 600px;
+	margin: 0 auto;
+}
 
 /* -- Forms (Login & Register) -- */
 .form-wrap { max-width: 520px; margin: 0 auto; }
