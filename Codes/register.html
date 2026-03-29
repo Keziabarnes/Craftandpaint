@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register — Craft &amp; Paint With Us JA</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- SITE BANNER -->
+  <header class="site-banner">
+    <a href="index.html">
+      <div class="banner-logo-circle">
+        <img src="../Assets/Craftandpaintlogo.jpg" alt="Craft and Paint With Us JA logo" />
+      </div>
+      <span class="banner-brand-name">Craft &amp; Paint With Us JA</span>
+      <span class="banner-tagline">Paint &nbsp;&middot;&nbsp; Sip &nbsp;&middot;&nbsp; Create</span>
+    </a>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="cart.html">Cart <span id="cart-count" aria-label="items in cart"></span></a></li>
+      <li><a href="checkout.html">Checkout</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="page-content">
+
+    <div class="page-hero">
+      <h1>Create Your Account</h1>
+      <p>Join the Craft &amp; Paint With Us JA family today!</p>
+    </div>
+
+    <div class="form-wrap">
+      <form id="register-form" class="form-card-inner" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="reg-fname">First Name</label>
+            <input type="text" id="reg-fname" name="firstname" placeholder="e.g. Jane" autocomplete="given-name" />
+            <span class="error-msg" id="reg-fname-err" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="reg-lname">Last Name</label>
+            <input type="text" id="reg-lname" name="lastname" placeholder="e.g. Doe" autocomplete="family-name" />
+            <span class="error-msg" id="reg-lname-err" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-dob">Date of Birth</label>
+          <input type="date" id="reg-dob" name="dob" autocomplete="bday" />
+          <span class="error-msg" id="reg-dob-err" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-email">Email Address</label>
+          <input type="email" id="reg-email" name="email" placeholder="e.g. jane@example.com" autocomplete="email" />
+          <span class="error-msg" id="reg-email-err" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-phone">Phone Number <span class="optional">(optional)</span></label>
+          <input type="tel" id="reg-phone" name="phone" placeholder="(876) xxx-xxxx" autocomplete="tel" />
+        </div>
+
+        <div class="form-group">
+          <label for="reg-username">Username</label>
+          <input type="text" id="reg-username" name="username" placeholder="Choose a unique username" autocomplete="username" />
+          <span class="error-msg" id="reg-username-err" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-password">Password</label>
+          <input type="password" id="reg-password" name="password" placeholder="At least 8 characters" autocomplete="new-password" />
+          <div class="password-strength" aria-hidden="true">
+            <div class="strength-bar" id="strength-bar"></div>
+          </div>
+          <span class="error-msg" id="reg-password-err" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-confirm">Confirm Password</label>
+          <input type="password" id="reg-confirm" name="confirm_password" placeholder="Re-enter your password" autocomplete="new-password" />
+          <span class="error-msg" id="reg-confirm-err" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" name="terms" />
+            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">Create My Account</button>
+
+      </form>
+
+      <p class="form-footer">Already have an account? <a href="login.html">Log in here</a></p>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-bottom">
+      <p>&copy; Kezia Barnes 2006650. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="scroll-top-btn" aria-label="Scroll to top">&#8679;</button>
+  <script src="../Codes/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Craft &amp; Paint With Us JA</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- SITE BANNER -->
+  <header class="site-banner">
+    <a href="index.html">
+      <div class="banner-logo-circle">
+        <img src="../Assets/Craftandpaintlogo.jpg" alt="Craft and Paint With Us JA logo" />
+      </div>
+      <span class="banner-brand-name">Craft &amp; Paint With Us JA</span>
+      <span class="banner-tagline">Paint &nbsp;&middot;&nbsp; Sip &nbsp;&middot;&nbsp; Create</span>
+    </a>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="cart.html">Cart <span id="cart-count" aria-label="items in cart"></span></a></li>
+      <li><a href="checkout.html">Checkout</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="page-content">
+
+    <h1>Checkout</h1>
+    <p>Enter your shipping details to complete your order.</p>
+
+    <!-- Order success message (shown by JS after confirmation) -->
+    <div class="success-msg" id="checkout-success" role="status">
+      🎉 Order placed successfully! Thank you for shopping with Craft &amp; Paint With Us JA!
+    </div>
+
+    <div class="checkout-layout">
+
+      <!-- Shipping & payment form -->
+      <div class="checkout-card">
+        <h3>Shipping Details</h3>
+
+        <form id="checkout-form" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="co-name">Full Name</label>
+              <input type="text" id="co-name" name="fullname" placeholder="e.g. Jane Doe" autocomplete="name" />
+              <span class="error-msg" id="co-name-err" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="co-phone">Phone Number</label>
+              <input type="tel" id="co-phone" name="phone" placeholder="(876) xxx-xxxx" autocomplete="tel" />
+              <span class="error-msg" id="co-phone-err" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="co-address">Street Address</label>
+            <input type="text" id="co-address" name="address" placeholder="e.g. 12 Hope Road, Kingston 6" autocomplete="street-address" />
+            <span class="error-msg" id="co-address-err" role="alert"></span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="co-city">City / Town</label>
+              <input type="text" id="co-city" name="city" placeholder="e.g. Kingston" autocomplete="address-level2" />
+              <span class="error-msg" id="co-city-err" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="co-parish">Parish</label>
+              <select id="co-parish" name="parish" autocomplete="address-level1">
+                <option value="">Select Parish</option>
+                <option>Kingston</option>
+                <option>St. Andrew</option>
+                <option>St. Thomas</option>
+                <option>Portland</option>
+                <option>St. Mary</option>
+                <option>St. Ann</option>
+                <option>Trelawny</option>
+                <option>St. James</option>
+                <option>Hanover</option>
+                <option>Westmoreland</option>
+                <option>St. Elizabeth</option>
+                <option>Manchester</option>
+                <option>Clarendon</option>
+                <option>St. Catherine</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="co-notes">Delivery Notes <span class="optional">(optional)</span></label>
+            <textarea id="co-notes" name="notes" rows="3" placeholder="Any special delivery instructions..."></textarea>
+          </div>
+
+          <div class="checkout-card">
+            <h3>Payment Details</h3>
+
+            <div class="form-group">
+              <label for="co-method">Payment Method</label>
+              <select id="co-method" name="payment_method">
+                <option value="cash">Cash on Delivery</option>
+                <option value="online">Online Transfer</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="co-amount">Amount Being Paid (J$)</label>
+              <input type="number" id="co-amount" name="amount" placeholder="0.00" min="0" step="0.01" />
+              <span class="error-msg" id="co-amount-err" role="alert"></span>
+            </div>
+
+            <div class="bank-details">
+              <p><strong>Bank Transfer Details</strong></p>
+              <p>Name: Craft and Paint With Us JA</p>
+              <p>Branch: Ocho Rios</p>
+              <p>Account Number: 87654321</p>
+              <p>Type: Business</p>
+            </div>
+          </div>
+
+          <div class="checkout-actions">
+            <button type="submit" class="btn btn-primary">&#10003; Confirm Order</button>
+            <button type="button" class="btn btn-outline" onclick="cancelCheckout()">&#10006; Cancel</button>
+            <button type="button" class="btn btn-accent" onclick="clearCart();window.location.href='cart.html'">&#128465; Clear All</button>
+            <button type="button" class="btn btn-outline" onclick="window.close()">&#10005; Close</button>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Order summary sidebar -->
+      <aside class="checkout-card" aria-label="Order summary">
+        <h3>Order Summary</h3>
+        <div id="checkout-items"></div>
+        <div class="summary-line">
+          <span>Subtotal</span><span id="co-subtotal">J$0.00</span>
+        </div>
+        <div class="summary-line discount">
+          <span>Discount</span><span id="co-discount">-J$0.00</span>
+        </div>
+        <div class="summary-line">
+          <span>GCT (15%)</span><span id="co-tax">J$0.00</span>
+        </div>
+        <div class="summary-total">
+          <span>Total</span><span id="co-total">J$0.00</span>
+        </div>
+        <p class="text-center">Thank you for supporting local Jamaican artistry!</p>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <!-- Confirm order modal -->
+  <div class="modal-overlay" id="confirmModal" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title">
+    <div class="modal">
+      <div aria-hidden="true" class="modal-emoji">🎉</div>
+      <h3 id="confirm-modal-title">Confirm Your Order?</h3>
+      <p>Your hand-painted tote bag(s) will be crafted with love and delivered to your door!</p>
+      <div class="modal-actions">
+        <button class="btn btn-outline" onclick="closeModal('confirmModal')">&larr; Go Back</button>
+        <button class="btn btn-primary" onclick="confirmCheckout()">Yes, Place Order!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-bottom">
+      <p>&copy; Kezia Barnes 2006650. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="scroll-top-btn" aria-label="Scroll to top">&#8679;</button>
+  <script src="../Codes/script.js"></script>
+</body>
+</html>

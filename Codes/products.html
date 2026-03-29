@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop — Craft &amp; Paint With Us JA</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- SITE BANNER -->
+  <header class="site-banner">
+    <a href="index.html">
+      <div class="banner-logo-circle">
+        <img src="../Assets/Craftandpaintlogo.jpg" alt="Craft and Paint With Us JA logo" />
+      </div>
+      <span class="banner-brand-name">Craft &amp; Paint With Us JA</span>
+      <span class="banner-tagline">Paint &nbsp;&middot;&nbsp; Sip &nbsp;&middot;&nbsp; Create</span>
+    </a>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="cart.html">Cart <span id="cart-count" aria-label="items in cart"></span></a></li>
+      <li><a href="checkout.html">Checkout</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="page-content">
+
+    <div class="page-hero">
+      <h1>Shop Tote Bags</h1>
+      <p>Each tote is hand-painted with love using premium acrylic paints. Choose a design or book a live session!</p>
+    </div>
+
+    <div class="products-grid">
+
+      <article class="product-card">
+        <div class="product-img">
+          <img src="../Assets/Tropical Paradise Tote.jpg" alt="Tropical Paradise Tote — vibrant colourful hand-painted canvas tote" />
+        </div>
+        <div class="product-info">
+          <h3>Tropical Paradise Tote</h3>
+          <p>Vibrant colour with beautiful background, hand-painted on premium canvas.</p>
+          <div class="product-footer">
+            <span class="product-price">J$3,000</span>
+            <button class="add-to-cart-btn" onclick="addToCart('Tropical Paradise Tote',3000,'\uD83C\uDF34')">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img">
+          <img src="../Assets/Sunset Harbour Tote.jpg" alt="Sunset Harbour Tote — warm orange sunset with swan on canvas" />
+        </div>
+        <div class="product-info">
+          <h3>Sunset Harbour Tote</h3>
+          <p>Breathtaking sunset in warm oranges with swan.</p>
+          <div class="product-footer">
+            <span class="product-price">J$3,000</span>
+            <button class="add-to-cart-btn" onclick="addToCart('Sunset Harbour Tote',3000,'\uD83C\uDF05')">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img">
+          <img src="../Assets/Jamaican Parakeet Tote.jpg" alt="Jamaican Parakeet Tote — colourful parakeet wildlife design" />
+        </div>
+        <div class="product-info">
+          <h3>Jamaican Parakeet Tote</h3>
+          <p>Celebrate Jamaica's vibrant wildlife with this stunning parakeet design.</p>
+          <div class="product-footer">
+            <span class="product-price">J$3,000</span>
+            <button class="add-to-cart-btn" onclick="addToCart('Jamaican Parakeet Tote',3000,'\uD83E\uDD9C')">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img">
+          <img src="../Assets/Beach in the summer.jfif" alt="Jamaican Beach Tote — white sand beach summer design" />
+        </div>
+        <div class="product-info">
+          <h3>Jamaican Beach Tote</h3>
+          <p>Jamaica's cool white sand beaches captured in a stunning design.</p>
+          <div class="product-footer">
+            <span class="product-price">J$3,000</span>
+            <button class="add-to-cart-btn" onclick="addToCart('Jamaican Beach Tote',3000,'\uD83C\uDFD6\uFE0F')">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img">
+          <img src="../Assets/Black Girl.jfif" alt="Black Girl Tote — bold empowerment design celebrating Black beauty" />
+        </div>
+        <div class="product-info">
+          <h3>Black Girl Tote</h3>
+          <p>A bold, empowering design celebrating Black beauty all year round.</p>
+          <div class="product-footer">
+            <span class="product-price">J$3,000</span>
+            <button class="add-to-cart-btn" onclick="addToCart('Black Girl Tote',3000,'\u2728')">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-img">
+          <img src="../Assets/Boss Party.jfif" alt="Boss Party Tote — vibrant party celebration design" />
+        </div>
+        <div class="product-info">
+          <h3>Boss Party Tote</h3>
+          <p>A vibrant, high-energy design for the one who is always the life of the party.</p>
+          <div class="product-footer">
+            <span class="product-price">J$3,000</span>
+            <button class="add-to-cart-btn" onclick="addToCart('Boss Party Tote',3000,'\uD83C\uDF89')">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:2006650@students.utech.edu.jm">Email Us</a></li>
+          <li><a href="tel:+18764544554">(876) 454-4554</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Kezia Barnes 2006650. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="scroll-top-btn" aria-label="Scroll to top">&#8679;</button>
+  <script src="../Codes/script.js"></script>
+</body>
+</html>

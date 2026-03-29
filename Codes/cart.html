@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart — Craft &amp; Paint With Us JA</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- SITE BANNER -->
+  <header class="site-banner">
+    <a href="index.html">
+      <div class="banner-logo-circle">
+        <img src="../Assets/Craftandpaintlogo.jpg" alt="Craft and Paint With Us JA logo" />
+      </div>
+      <span class="banner-brand-name">Craft &amp; Paint With Us JA</span>
+      <span class="banner-tagline">Paint &nbsp;&middot;&nbsp; Sip &nbsp;&middot;&nbsp; Create</span>
+    </a>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="cart.html">Cart <span id="cart-count" aria-label="items in cart"></span></a></li>
+      <li><a href="checkout.html">Checkout</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="page-content">
+
+    <h1>Your Shopping Cart</h1>
+    <p>Review your items. Spend J$10,000+ to unlock a 10% discount!</p>
+
+    <!-- Empty cart state (shown by JS) -->
+    <div class="empty-state" id="cart-empty">
+      <div class="empty-icon" aria-hidden="true">🛒</div>
+      <h3>Your cart is empty!</h3>
+      <p>Discover our beautiful hand-painted totes.</p>
+      <a href="products.html" class="btn btn-primary">Browse Products</a>
+    </div>
+
+    <!-- Cart table (shown by JS) -->
+    <div class="cart-layout" id="cart-table-wrap">
+
+      <div class="cart-table-wrap">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Subtotal</th>
+              <th scope="col"><span class="sr-only">Remove</span></th>
+            </tr>
+          </thead>
+          <tbody id="cart-tbody"></tbody>
+        </table>
+        <div class="cart-table-actions">
+          <button class="btn btn-outline" onclick="clearCart()">🗑 Clear All</button>
+          <a href="products.html" class="btn btn-outline">← Continue Shopping</a>
+        </div>
+      </div>
+
+      <!-- Order summary sidebar -->
+      <aside class="cart-summary" aria-label="Order summary">
+        <h3>Order Summary</h3>
+        <div class="summary-line">
+          <span>Subtotal</span><span id="summary-subtotal">J$0.00</span>
+        </div>
+        <div class="summary-line discount">
+          <span>Discount (10% off J$10k+)</span><span id="summary-discount">-J$0.00</span>
+        </div>
+        <div class="summary-line">
+          <span>GCT (15%)</span><span id="summary-tax">J$0.00</span>
+        </div>
+        <div class="summary-total">
+          <span>Total</span><span id="summary-total">J$0.00</span>
+        </div>
+        <div class="cart-actions">
+          <a href="checkout.html" class="btn btn-primary">Proceed to Checkout &rarr;</a>
+          <a href="products.html" class="btn btn-outline">Continue Shopping</a>
+        </div>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <!-- Clear cart confirmation modal -->
+  <div class="modal-overlay" id="clearCartModal" role="dialog" aria-modal="true" aria-labelledby="clear-modal-title">
+    <div class="modal">
+      <h3 id="clear-modal-title">Clear Cart?</h3>
+      <p>Are you sure you want to remove all items? This cannot be undone.</p>
+      <div class="modal-actions">
+        <button class="btn btn-outline" onclick="closeModal('clearCartModal')">Cancel</button>
+        <button class="btn btn-accent" onclick="confirmClearCart()">Yes, Clear All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-bottom">
+      <p>&copy; Kezia Barnes 2006650. All rights reserved. | CIT2011 Individual Assignment #2</p>
+    </div>
+  </footer>
+
+  <button id="scroll-top-btn" aria-label="Scroll to top">&#8679;</button>
+  <script src="../Codes/script.js"></script>
+</body>
+</html>

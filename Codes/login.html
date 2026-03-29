@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — Craft &amp; Paint With Us JA</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@400;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- SITE BANNER -->
+  <header class="site-banner">
+    <a href="index.html">
+      <div class="banner-logo-circle">
+        <img src="../Assets/Craftandpaintlogo.jpg" alt="Craft and Paint With Us JA logo" />
+      </div>
+      <span class="banner-brand-name">Craft &amp; Paint With Us JA</span>
+      <span class="banner-tagline">Paint &nbsp;&middot;&nbsp; Sip &nbsp;&middot;&nbsp; Create</span>
+    </a>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="cart.html">Cart <span id="cart-count" aria-label="items in cart"></span></a></li>
+      <li><a href="checkout.html">Checkout</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="page-content">
+
+    <div class="page-hero">
+      <h1>Welcome Back!</h1>
+      <p>Log in to your Craft &amp; Paint With Us JA account</p>
+    </div>
+
+    <div class="form-wrap">
+
+      <div class="success-msg" id="login-success" role="status"></div>
+
+      <form id="login-form" class="form-card-inner" novalidate>
+
+        <div class="form-group">
+          <label for="login-username">Username or Email</label>
+          <input type="text" id="login-username" name="username"
+            placeholder="Enter your username or email" autocomplete="username" />
+          <span class="error-msg" id="login-username-err" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" name="password"
+            placeholder="Enter your password" autocomplete="current-password" />
+          <span class="error-msg" id="login-password-err" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" name="remember" />
+            Remember me
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full">Log In</button>
+
+        <div class="form-divider">or</div>
+
+        <button type="button" class="btn btn-outline btn-full" onclick="showToast('Social login coming soon!')">
+          Continue with Google
+        </button>
+
+      </form>
+
+      <p class="form-footer">Don't have an account? <a href="register.html">Sign up free</a></p>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-bottom">
+      <p>&copy; Kezia Barnes 2006650. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button id="scroll-top-btn" aria-label="Scroll to top">&#8679;</button>
+  <script src="../Codes/script.js"></script>
+</body>
+</html>

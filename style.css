@@ -1,0 +1,916 @@
+/* ============================================================
+   Craft & Paint With Us JA — style.css
+   Student : Kezia Barnes | ID: 2006650
+   Module  : CIT2011 Web Programming — Individual Assignment #2
+   ============================================================ */
+
+
+/* ---- IA2 CSS: Custom Properties (variables) ---- */
+:root {
+  --clr-primary:   #7B2D8B;
+  --clr-secondary: #F4A300;
+  --clr-accent:    #E94B3C;
+  --clr-bg:        #F5F0FA;
+  --clr-dark:      #1A0A2E;
+  --clr-mid:       #5C3D6E;
+  --clr-light:     #EEE0F7;
+  --clr-white:     #FFFFFF;
+  --clr-text:      #2D1B3E;
+  --clr-muted:     #7A6B8A;
+  --clr-success:   #2E7D32;
+  --clr-error:     #C62828;
+
+  --ff-display: 'Playfair Display', serif;
+  --ff-body:    'Lato', sans-serif;
+  --ff-accent:  'Dancing Script', cursive;
+
+  --fw-normal: 400;
+  --fw-bold:   700;
+
+  --radius:    10px;
+  --radius-lg: 20px;
+  --shadow:    0 4px 20px rgba(123,45,139,.13);
+  --shadow-lg: 0 10px 40px rgba(123,45,139,.22);
+  --transition: all 0.28s ease;
+}
+
+
+/* ---- IA2 CSS: Element selectors — global reset & base ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--ff-body);
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img { max-width: 100%; display: block; }
+a   { text-decoration: none; color: inherit; transition: var(--transition); }
+ul  { list-style: none; }
+p   { margin-bottom: .75rem; }
+
+
+/* ---- IA2 CSS: Element selectors — typography ---- */
+h1, h2, h3, h4 {
+  font-family: var(--ff-display);
+  font-weight: var(--fw-bold);
+  color: var(--clr-primary);
+  line-height: 1.25;
+  margin-bottom: .5rem;
+}
+
+h1 { font-size: clamp(1.8rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 2.2rem); }
+h3 { font-size: clamp(1.1rem, 2vw, 1.6rem); }
+h4 { font-size: 1rem; }
+
+
+/* ---- IA2 CSS: Class selector — layout container ---- */
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.text-center { text-align: center; }
+
+
+/* ============================================================
+   BUTTONS — IA2 CSS: Class selectors + pseudo-class :hover
+   ============================================================ */
+.btn {
+  display: inline-block;
+  padding: .65rem 1.6rem;
+  border-radius: 50px;
+  font-family: var(--ff-body);
+  font-weight: var(--fw-bold);
+  font-size: .9rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  letter-spacing: .4px;
+}
+
+.btn-primary { background: var(--clr-primary); color: var(--clr-white); }
+.btn-primary:hover { background: var(--clr-mid); transform: translateY(-2px); box-shadow: var(--shadow); }
+
+.btn-secondary { background: var(--clr-secondary); color: var(--clr-dark); }
+.btn-secondary:hover { background: #d4891a; transform: translateY(-2px); }
+
+.btn-accent { background: var(--clr-accent); color: var(--clr-white); }
+.btn-accent:hover { background: #c73a2c; transform: translateY(-2px); }
+
+.btn-outline { background: transparent; border: 2px solid var(--clr-primary); color: var(--clr-primary); }
+.btn-outline:hover { background: var(--clr-primary); color: var(--clr-white); }
+
+
+/* ============================================================
+   HEADER / BANNER — IA2 CSS: Layout & Positioning
+   ============================================================ */
+.site-banner {
+  background: var(--clr-primary);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.banner-logo-circle {
+  width: 130px;
+  height: 130px;
+  background: var(--clr-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto .75rem;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0,0,0,.25);
+  padding: 8px;
+}
+
+.banner-logo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.banner-brand-name {
+  font-family: var(--ff-accent);
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  color: var(--clr-white);
+  display: block;
+  letter-spacing: 1px;
+}
+
+.banner-tagline {
+  font-size: .85rem;
+  color: rgba(255,255,255,.75);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: .25rem;
+  display: block;
+}
+
+
+/* ============================================================
+   NAVIGATION — IA2 CSS: Flexbox layout, pseudo-class :hover
+   ============================================================ */
+.site-nav {
+  background: var(--clr-white);
+  border-bottom: 3px solid var(--clr-primary);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+/* IA2 CSS: Descendant selector — nav links inside .site-nav */
+.site-nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.site-nav ul li a {
+  display: block;
+  padding: 1rem 1.5rem;
+  font-weight: var(--fw-bold);
+  font-size: .9rem;
+  color: var(--clr-text);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -3px;
+  transition: var(--transition);
+}
+
+/* IA2 CSS: Pseudo-class :hover */
+.site-nav ul li a:hover,
+.site-nav ul li a.active {
+  color: var(--clr-primary);
+  border-bottom-color: var(--clr-secondary);
+  background: var(--clr-light);
+}
+
+/* Cart badge — IA2 CSS: ID selector */
+#cart-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-accent);
+  color: var(--clr-white);
+  font-size: .6rem;
+  font-weight: var(--fw-bold);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-left: .3rem;
+  vertical-align: middle;
+}
+
+/* Hamburger button (mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: .75rem 1rem;
+  margin-left: auto;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--clr-primary);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+
+/* ============================================================
+   MAIN CONTENT WRAPPER
+   ============================================================ */
+.page-content {
+  background: var(--clr-white);
+  border: 1px solid var(--clr-light);
+  border-radius: var(--radius-lg);
+  margin: 2rem auto;
+  width: 92%;
+  max-width: 1100px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  flex: 1;
+}
+
+/* IA2 CSS: Class selector — hero banner inside pages */
+.page-hero {
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--clr-primary), var(--clr-mid));
+  color: var(--clr-white);
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-hero h1 { color: var(--clr-white); margin-bottom: .5rem; }
+.page-hero p  { color: rgba(255,255,255,.85); max-width: 600px; margin: 0 auto; }
+
+
+/* ============================================================
+   HOME PAGE — IA2 CSS: Grid layout
+   ============================================================ */
+.home-welcome {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 1.5rem 0 2rem;
+}
+
+.home-welcome-img {
+width: 80%;
+  heigh: 80%;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.home-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.25rem; }
+
+.bullet-list { list-style: disc; padding-left: 1.5rem; color: var(--clr-muted); margin-bottom: 1.5rem; }
+.bullet-list li { margin-bottom: .4rem; }
+
+/* IA2 CSS: Grid layout — products grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* IA2 CSS: Class selector + pseudo-class :hover */
+.product-card {
+  background: var(--clr-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--clr-light);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+.product-img {
+  height: 180px;
+  overflow: hidden;
+  background: var(--clr-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info { padding: 1.1rem; flex: 1; display: flex; flex-direction: column; }
+.product-info h3 { font-size: 1rem; margin-bottom: .3rem; }
+.product-info p  { font-size: .82rem; color: var(--clr-muted); flex: 1; }
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  margin-top: .75rem;
+}
+
+.product-price {
+  font-size: 1.15rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-primary);
+  font-family: var(--ff-display);
+}
+
+.add-to-cart-btn {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  border: none;
+  border-radius: 8px;
+  padding: .45rem .9rem;
+  cursor: pointer;
+  font-size: .8rem;
+  font-weight: var(--fw-bold);
+  font-family: var(--ff-body);
+  transition: var(--transition);
+}
+
+.add-to-cart-btn:hover { background: var(--clr-accent); transform: scale(1.05); }
+
+
+/* ============================================================
+   FORMS (Login & Register) — IA2 CSS: Descendant + pseudo-class
+   ============================================================ */
+.form-wrap { max-width: 520px; margin: 0 auto; }
+
+.form-card-inner {
+  background: var(--clr-bg);
+  border-radius: var(--radius);
+  padding: 2rem;
+  border: 1px solid var(--clr-light);
+  margin-top: 1rem;
+}
+
+.form-group { margin-bottom: 1.1rem; }
+
+/* IA2 CSS: Descendant selector */
+.form-group label {
+  display: block;
+  font-weight: var(--fw-bold);
+  font-size: .85rem;
+  color: var(--clr-text);
+  margin-bottom: .3rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: .7rem .9rem;
+  border: 2px solid rgba(123,45,139,.15);
+  border-radius: var(--radius);
+  font-family: var(--ff-body);
+  font-size: .9rem;
+  color: var(--clr-text);
+  background: var(--clr-white);
+  transition: var(--transition);
+  outline: none;
+}
+
+/* IA2 CSS: Pseudo-class :focus */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 3px rgba(123,45,139,.1);
+}
+
+.form-group input.error-field { border-color: var(--clr-error); }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.form-divider {
+  text-align: center;
+  color: var(--clr-muted);
+  font-size: .85rem;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.form-divider::before,
+.form-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 42%;
+  height: 1px;
+  background: rgba(123,45,139,.15);
+}
+
+.form-divider::before { left: 0; }
+.form-divider::after  { right: 0; }
+
+.form-footer {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: .875rem;
+  color: var(--clr-muted);
+}
+
+/* IA2 CSS: Descendant selector — links inside .form-footer */
+.form-footer a { color: var(--clr-primary); font-weight: var(--fw-bold); }
+
+.password-strength {
+  height: 4px;
+  border-radius: 2px;
+  background: #ddd;
+  margin-top: .4rem;
+  overflow: hidden;
+}
+
+.strength-bar {
+  height: 100%;
+  border-radius: 2px;
+  transition: var(--transition);
+  width: 0;
+}
+
+/* IA2 CSS: Class selectors — feedback messages */
+.error-msg {
+  color: var(--clr-error);
+  font-size: .78rem;
+  margin-top: .25rem;
+  display: none;
+}
+
+.error-msg.visible { display: block; }
+
+.success-msg {
+  background: #e8f5e9;
+  color: var(--clr-success);
+  border-left: 4px solid var(--clr-success);
+  padding: .875rem 1rem;
+  border-radius: var(--radius);
+  font-size: .875rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.success-msg.visible { display: block; }
+
+
+/* ============================================================
+   CART PAGE — IA2 CSS: Grid + Flexbox layout
+   ============================================================ */
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.cart-table-wrap {
+  background: var(--clr-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--clr-light);
+  overflow: hidden;
+}
+
+.cart-table { width: 100%; border-collapse: collapse; }
+
+/* IA2 CSS: Descendant selector — thead inside .cart-table */
+.cart-table thead { background: var(--clr-primary); color: var(--clr-white); }
+.cart-table th { padding: .75rem 1rem; text-align: left; font-size: .82rem; }
+.cart-table td { padding: .75rem 1rem; border-bottom: 1px solid var(--clr-light); vertical-align: middle; }
+.cart-table tbody tr:last-child td { border-bottom: none; }
+
+/* IA2 CSS: Pseudo-class :hover on table rows */
+.cart-table tbody tr:hover { background: var(--clr-light); }
+
+.qty-control { display: flex; align-items: center; gap: .4rem; }
+
+.qty-btn {
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--clr-primary);
+  background: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: .9rem;
+  color: var(--clr-primary);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-btn:hover { background: var(--clr-primary); color: var(--clr-white); }
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: var(--clr-error);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: .3rem;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+
+.remove-btn:hover { background: #ffebee; }
+
+.cart-table-actions {
+  display: flex;
+  gap: .75rem;
+  padding: 1rem;
+  border-top: 2px solid var(--clr-light);
+  flex-wrap: wrap;
+}
+
+/* IA2 CSS: Class selector — order summary sidebar */
+.cart-summary {
+  background: var(--clr-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--clr-light);
+  padding: 1.5rem;
+  position: sticky;
+  top: 70px;
+}
+
+.cart-summary h3 {
+  margin-bottom: 1.25rem;
+  padding-bottom: .65rem;
+  border-bottom: 2px solid var(--clr-light);
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: .875rem;
+  padding: .4rem 0;
+  color: var(--clr-muted);
+}
+
+.summary-line.discount { color: var(--clr-success); }
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: var(--fw-bold);
+  font-size: 1.1rem;
+  padding: .875rem 0 .4rem;
+  margin-top: .4rem;
+  border-top: 2px solid var(--clr-primary);
+  color: var(--clr-primary);
+}
+
+.cart-actions { display: flex; flex-direction: column; gap: .6rem; margin-top: 1rem; }
+
+.empty-state { text-align: center; padding: 3rem 2rem; color: var(--clr-muted); }
+.empty-state .empty-icon { font-size: 3.5rem; margin-bottom: .875rem; opacity: .4; }
+
+
+/* ============================================================
+   CHECKOUT PAGE — IA2 CSS: Grid layout
+   ============================================================ */
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.checkout-card {
+  background: var(--clr-bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--clr-light);
+  padding: 1.75rem;
+}
+
+.checkout-card h3 {
+  margin-bottom: 1.25rem;
+  padding-bottom: .65rem;
+  border-bottom: 2px solid var(--clr-light);
+}
+
+.checkout-order-item {
+  display: flex;
+  justify-content: space-between;
+  padding: .5rem 0;
+  border-bottom: 1px solid var(--clr-light);
+  font-size: .875rem;
+}
+
+.checkout-order-item:last-child { border-bottom: none; }
+
+.checkout-actions { display: flex; gap: .65rem; flex-wrap: wrap; margin-top: 1.25rem; }
+
+.bank-details {
+  background: var(--clr-light);
+  border-radius: var(--radius);
+  padding: 1rem;
+  font-size: .875rem;
+  margin-top: 1rem;
+}
+
+.bank-details p { margin-bottom: .3rem; }
+
+
+/* ============================================================
+   ABOUT PAGE — IA2 CSS: Grid layout
+   ============================================================ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.about-visual {
+  background: linear-gradient(135deg, var(--clr-light), #e6c3ff);
+  border-radius: var(--radius-lg);
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+}
+
+.about-values { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
+
+.value-card {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  border-left: 4px solid var(--clr-secondary);
+  box-shadow: var(--shadow);
+}
+
+.value-card h4 { margin-bottom: .35rem; }
+.value-card p  { font-size: .82rem; color: var(--clr-muted); margin: 0; }
+
+.student-card {
+  background: var(--clr-bg);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  border: 1px solid var(--clr-light);
+  max-width: 520px;
+  margin: 2rem auto;
+  border-top: 5px solid var(--clr-secondary);
+}
+
+.student-card h3 {
+  font-family: var(--ff-accent);
+  font-size: 1.5rem;
+  margin-bottom: .25rem;
+}
+
+.student-details {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* IA2 CSS: Descendant selector — paragraphs inside .student-details */
+.student-details p { font-size: .875rem; margin-bottom: .35rem; }
+.student-details p strong { color: var(--clr-primary); }
+
+.storyboard-section { margin-top: 2rem; }
+.storyboard-section h4 { margin-bottom: .75rem; }
+.storyboard-section img { border-radius: var(--radius); border: 1px solid var(--clr-light); max-width: 100%; }
+
+
+/* ============================================================
+   MODAL — IA2 CSS: Positioning (fixed)
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26,10,46,.7);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+
+.modal {
+  background: var(--clr-white);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  max-width: 460px;
+  width: 100%;
+  transform: scale(.9);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.modal-overlay.open .modal { transform: scale(1); }
+.modal h3 { margin-bottom: .75rem; }
+.modal p  { color: var(--clr-muted); margin-bottom: 1.25rem; }
+.modal-actions { display: flex; gap: .875rem; justify-content: center; }
+
+
+/* ============================================================
+   TOAST NOTIFICATION — IA2 CSS: Fixed positioning
+   ============================================================ */
+.toast {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  padding: .875rem 1.4rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  font-size: .875rem;
+  font-weight: var(--fw-bold);
+  z-index: 9999;
+  transform: translateY(80px);
+  opacity: 0;
+  transition: all .4s ease;
+  max-width: 300px;
+}
+
+.toast.show { transform: translateY(0); opacity: 1; }
+
+
+/* ============================================================
+   FOOTER — IA2 CSS: Descendant selectors
+   ============================================================ */
+footer {
+  background: var(--clr-dark);
+  color: rgba(255,255,255,.7);
+  padding: 2rem 0 1rem;
+  margin-top: auto;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto 1.5rem;
+}
+
+.footer-col h4 {
+  color: var(--clr-white);
+  font-size: .85rem;
+  margin-bottom: .75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* IA2 CSS: Descendant selector — links inside footer */
+.footer-col ul li { margin-bottom: .4rem; }
+.footer-col ul li a { font-size: .85rem; }
+.footer-col ul li a:hover { color: var(--clr-secondary); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.08);
+  text-align: center;
+  padding-top: 1rem;
+  font-size: .78rem;
+  color: rgba(255,255,255,.35);
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+/* ============================================================
+   SCROLL-TO-TOP BUTTON
+   ============================================================ */
+#scroll-top-btn {
+  position: fixed;
+  bottom: 5rem;
+  right: 1.5rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: none;
+  z-index: 8000;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+#scroll-top-btn:hover { background: var(--clr-mid); }
+
+/* ---- Utility classes ---- */
+.btn-full { width: 100%; font-size: 1rem; padding: .875rem; }
+
+.optional { color: var(--clr-muted); font-weight: var(--fw-normal); font-size: .85rem; }
+
+/* IA2 CSS: Descendant selector — checkbox label */
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: .65rem;
+  cursor: pointer;
+  font-weight: var(--fw-normal);
+  font-size: .875rem;
+  color: var(--clr-muted);
+}
+
+.checkbox-label input { accent-color: var(--clr-primary); width: auto; margin-top: .2rem; flex-shrink: 0; }
+.checkbox-label a { color: var(--clr-primary); font-weight: var(--fw-bold); }
+
+/* Screen-reader only (accessibility) */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* About page — slogan */
+.slogan {
+  font-family: var(--ff-accent);
+  font-size: 1.4rem;
+  color: var(--clr-primary);
+  margin: 1.5rem 0;
+}
+
+/* Checkout card nested inside form */
+.checkout-card .checkout-card {
+  margin-top: 1.5rem;
+  border-top: 2px solid var(--clr-light);
+  padding-top: 1.5rem;
+  background: none;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Modal emoji display */
+.modal-emoji { font-size: 2.5rem; margin-bottom: .75rem; }
+
+/* Horizontal rule */
+hr { border: none; border-top: 2px solid var(--clr-light); margin: 2rem 0; }
+
+
+/* ============================================================
+   RESPONSIVE — IA2 CSS: Media queries (mobile & desktop views)
+   ============================================================ */
+
+/* Tablet: max 950px */
+@media (max-width: 950px) {
+  .home-welcome      { grid-template-columns: 1fr; text-align: center; }
+  .home-welcome-img  { margin: 0 auto; }
+  .home-cta          { justify-content: center; }
+  .about-grid        { grid-template-columns: 1fr; }
+  .about-visual      { height: 200px; }
+  .cart-layout       { grid-template-columns: 1fr; }
+  .checkout-layout   { grid-template-columns: 1fr; }
+  .footer-inner      { flex-direction: column; }
+}
+
+/* Mobile: max 600px */
+@media (max-width: 600px) {
+  .site-nav ul             { display: none; flex-direction: column; }
+  .site-nav ul.open        { display: flex; }
+  .site-nav ul li a        { padding: .875rem 1.5rem; border-bottom: 1px solid var(--clr-light); }
+  .hamburger               { display: flex; }
+  .about-values            { grid-template-columns: 1fr; }
+  .form-row                { grid-template-columns: 1fr; }
+  .page-content            { padding: 1.25rem; }
+  .checkout-actions        { flex-direction: column; }
+  .cart-table th:nth-child(3),
+  .cart-table td:nth-child(3) { display: none; }
+}
